@@ -1,0 +1,37 @@
+# Configuración para GitHub Pages
+plugins:
+  - jekyll-relative-links
+
+# Configuración de GitHub Pages
+github: [metadata]
+
+# Archivos a incluir
+include:
+  - index.html
+  - styles.css
+  - script.js
+  - favicon.svg
+  - logo.svg
+
+# Archivos a excluir
+exclude:
+  - README.md
+  - .vscode/
+  - .github/
+
+# Configuración de rutas relativas
+relative_links:
+  enabled: true
+  collections: false
+
+# Configuración del sitio
+title: "KoriApp - Soluciones de Pago Globales"
+description: "Una plataforma moderna de pagos digitales que ofrece soluciones seguras, rápidas y escalables"
+
+# Configuración de kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Configuración de highlighter
+highlighter: rouge
