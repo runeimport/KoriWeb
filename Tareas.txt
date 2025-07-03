@@ -1,0 +1,37 @@
+
+Tareas para el sitio web de KoriTrade.. 
+
+1 - Pasar dominio entre cuentas Hostinger
+
+2 - Subir codigo fuentes a GitHub
+
+3 -  Hacer pull del codigo GitHub en el servidor de Hostinger ssh
+
+4 - AGregar claves SSH locales A Servidor Hostinger
+
+5 - Agregar claves  SSH Hostinger a GitHub
+
+6 - Crear usuario y clave SSH en Programa BItvise WINDOWS
+
+7 - Modificar codigo seccion contacto poner N° con WhatApapp y Email
+
+8 - Crear email con  @dominio.com y agregarlo a la seccion contacto del sitio web
+
+9 - Revisar texto seccion contacto
+
+   - Revisar texto seccion quienes somos
+
+   - Revisar texto seccion como funciona
+
+   - Revisar texto seccion preguntas frecuentes
+
+   - Revisar texto seccion servicios
+
+10 - Calculadora de trade Conversion saldo USD Digital a Crypto A Pesos con calculo de perdida x Conversion de trade.
+
+
+10 - 
+
+11 - Explicar como Pasar USD a Crypto
+
+12 - Explicar Como pasar Crypto a Pesos.
