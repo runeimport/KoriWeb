@@ -1,10 +1,13 @@
-# Configuración básica para GitHub Pages
+# Configuración para GitHub Pages
 title: "KoriApp - Soluciones de Pago Globales"
 description: "Una plataforma moderna de pagos digitales que ofrece soluciones seguras, rápidas y escalables"
 
-# URL del sitio
+# URL del sitio en GitHub Pages
 url: "https://runeimport.github.io"
 baseurl: "/KoriWeb"
+
+# Configuración del tema
+theme: minima
 
 # Archivos a excluir
 exclude:
