@@ -1,4 +1,4 @@
-# Configuración para GitHub Pages
+# Configuración simple para GitHub Pages
 title: "KoriApp - Soluciones de Pago Globales"
 description: "Una plataforma moderna de pagos digitales que ofrece soluciones seguras, rápidas y escalables"
 
@@ -6,22 +6,18 @@ description: "Una plataforma moderna de pagos digitales que ofrece soluciones se
 url: "https://runeimport.github.io"
 baseurl: "/KoriWeb"
 
-# Configuración del tema
-theme: minima
-
-# Archivos a excluir
+# Excluir archivos innecesarios
 exclude:
   - .vscode/
   - .github/
   - .gitignore
+  - README.md
+  - tareas.log
+  - Tareas.txt
 
-# Procesamiento con Jekyll
+# Configuración básica de Jekyll
 markdown: kramdown
 highlighter: rouge
-
-# Plugins necesarios
-plugins:
-  - jekyll-relative-links
 
 # Configuración de kramdown
 kramdown:

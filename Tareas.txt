@@ -27,11 +27,14 @@ Tareas para el sitio web de KoriTrade..
 
    - Revisar texto seccion servicios
 
-10 - Calculadora de trade Conversion saldo USD Digital a Crypto A Pesos con calculo de perdida x Conversion de trade.
+   10 - Calculadora de trade Conversion saldo USD Digital a Crypto A Pesos con calculo de perdida x Conversion de trade.
 
+   11 - Explicar como Pasar USD a Crypto
 
-10 - 
+   12 - Explicar Como pasar Crypto a Pesos.
 
-11 - Explicar como Pasar USD a Crypto
+13 - Configurar Code Spaces En GitHub para progamar oneline
 
-12 - Explicar Como pasar Crypto a Pesos.
+14 - Configurar Credenciales y para terminar en Code Spaces
+
+15 - Configurar Depploy Para KoriWEB en dominio temoporal GitHub
