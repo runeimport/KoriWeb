@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" class="koriapp-logo">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icono -->
+  <g class="logo-icon">
+    <!-- Círculo exterior -->
+    <circle cx="30" cy="30" r="25" fill="url(#logoGradient)" class="logo-circle"/>
+    
+    <!-- Formas internas que representan "K" estilizada -->
+    <path d="M20 15 L20 45 M20 30 L35 15 M20 30 L35 45" 
+          stroke="white" 
+          stroke-width="3" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+    
+    <!-- Punto decorativo -->
+    <circle cx="38" cy="22" r="2" fill="white"/>
+  </g>
+  
+  <!-- Texto KORIAPP -->
+  <g class="logo-text">
+    <text x="65" y="25" 
+          font-family="Inter, Arial, sans-serif" 
+          font-size="18" 
+          font-weight="700" 
+          fill="url(#logoGradient)" 
+          class="logo-main-text">KORI</text>
+    <text x="65" y="45" 
+          font-family="Inter, Arial, sans-serif" 
+          font-size="12" 
+          font-weight="500" 
+          fill="url(#logoGradient)" 
+          class="logo-sub-text">APP</text>
+  </g>
+  
+  <!-- Elemento decorativo -->
+  <g class="logo-decoration">
+    <circle cx="150" cy="20" r="3" fill="url(#logoGradient)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="160" cy="25" r="2" fill="url(#logoGradient)" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="155" cy="35" r="2.5" fill="url(#logoGradient)" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

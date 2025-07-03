@@ -1,0 +1,1444 @@
+/* Logo Styles */
+.koriapp-logo {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo-icon .logo-circle {
+    filter: drop-shadow(0 2px 8px rgba(0, 102, 204, 0.3));
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .logo-icon .logo-circle {
+    filter: drop-shadow(0 2px 8px rgba(139, 92, 246, 0.4));
+}
+
+.koriapp-logo:hover {
+    transform: scale(1.05);
+}
+
+.koriapp-logo:hover .logo-icon .logo-circle {
+    filter: drop-shadow(0 4px 12px rgba(0, 102, 204, 0.5));
+}
+
+[data-theme="dark"] .koriapp-logo:hover .logo-icon .logo-circle {
+    filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.6));
+}
+
+/* Adaptación para tema oscuro */
+[data-theme="dark"] .logo-main-text,
+[data-theme="dark"] .logo-sub-text,
+[data-theme="dark"] .logo-decoration circle {
+    fill: url(#logoGradientDark);
+}
+
+/* Logo en el footer */
+.footer .koriapp-logo {
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .footer .logo-main-text,
+[data-theme="dark"] .footer .logo-sub-text {
+    fill: url(#logoGradientFooterDark);
+}
+
+[data-theme="dark"] .footer .logo-circle {
+    fill: url(#logoGradientFooterDark);
+}
+
+.footer .koriapp-logo:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Dark Theme Variables */
+:root {
+    --primary-color: #0066cc;
+    --primary-dark: #004499;
+    --bg-color: #ffffff;
+    --bg-secondary: #f8fbff;
+    --text-color: #333;
+    --text-secondary: #666;
+    --text-light: #999;
+    --card-bg: #ffffff;
+    --border-color: rgba(0, 102, 204, 0.1);
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+    --primary-color: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --bg-color: #0f0f23;
+    --bg-secondary: #1a1a2e;
+    --text-color: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+    --card-bg: #16213e;
+    --border-color: rgba(139, 92, 246, 0.2);
+    --header-bg: rgba(15, 15, 35, 0.95);
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav {
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="light"] .btn-primary {
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+[data-theme="light"] .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-theme {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-theme:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 3pc;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%230066cc;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%230066cc;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="300" fill="url(%23a)"/><circle cx="800" cy="600" r="400" fill="url(%23a)"/></svg>');
+    opacity: 0.6;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    color: var(--text-color);
+}
+
+.highlight {
+    background: linear-gradient(135deg, var(--primary-color), #00aaff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .highlight {
+    background: linear-gradient(135deg, var(--primary-color), #a855f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hero Image */
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Logo flotante arriba de la tarjeta */
+.hero-floating-logo {
+    z-index: 15;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: logoFloat 6s ease-in-out infinite;
+}
+
+.hero-floating-logo-svg {
+    width: 180px;
+    height: 54px;
+    filter: drop-shadow(0 8px 20px rgba(139, 92, 246, 0.4));
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .hero-floating-logo-svg {
+    filter: drop-shadow(0 8px 20px rgba(0, 102, 204, 0.4));
+}
+
+.hero-floating-logo-svg:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 12px 25px rgba(139, 92, 246, 0.6));
+}
+
+[data-theme="light"] .hero-floating-logo-svg:hover {
+    filter: drop-shadow(0 12px 25px rgba(0, 102, 204, 0.6));
+}
+
+/* Adaptación de gradientes para el logo flotante */
+[data-theme="dark"] .hero-floating-logo-svg .logo-circle {
+    fill: url(#floatingLogoGradientDark);
+}
+
+[data-theme="light"] .hero-floating-logo-svg .logo-circle {
+    fill: url(#floatingLogoGradient);
+}
+
+[data-theme="dark"] .hero-floating-logo-svg .logo-main-text,
+[data-theme="dark"] .hero-floating-logo-svg .logo-sub-text,
+[data-theme="dark"] .hero-floating-logo-svg .logo-decoration circle {
+    fill: url(#floatingLogoGradientDark);
+}
+
+/* Payment Card Styles */
+.payment-card {
+    width: 350px;
+    height: 220px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.25);
+    animation: float 6s ease-in-out infinite;
+    z-index: 5;
+    transform-style: preserve-3d;
+    margin-top: 3rem;
+}
+
+/* Logo grande dentro de la tarjeta */
+.card-hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    animation: logoFloat 6s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+.card-hero-logo-svg {
+    width: 120px;
+    height: 36px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.payment-card:hover .card-hero-logo-svg {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.card-hero-logo .logo-circle {
+    fill: rgba(255, 255, 255, 0.95);
+}
+
+.card-hero-logo .logo-main-text,
+.card-hero-logo .logo-sub-text {
+    fill: rgba(255, 255, 255, 1);
+}
+
+.card-hero-logo path,
+.card-hero-logo circle:not(.logo-circle) {
+    stroke: rgba(0, 102, 204, 0.9);
+    fill: rgba(0, 102, 204, 0.9);
+}
+
+[data-theme="dark"] .card-hero-logo path,
+[data-theme="dark"] .card-hero-logo circle:not(.logo-circle) {
+    stroke: rgba(139, 92, 246, 0.9);
+    fill: rgba(139, 92, 246, 0.9);
+}
+
+/* Ajustes de opacidad para elementos de la tarjeta */
+.payment-card .card-number,
+.payment-card .card-info {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.payment-card:hover .card-number,
+.payment-card:hover .card-info {
+    opacity: 0.9;
+}
+
+/* Logo en esquina inferior derecha de la tarjeta */
+.card-bottom-logo {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    z-index: 20;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.payment-card:hover .card-bottom-logo {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.card-bottom-logo .card-hero-logo-svg {
+    width: 80px;
+    height: 24px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.floating-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .floating-icon {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.floating-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.floating-icon:nth-child(1) {
+    top: 20%;
+    right: -30px;
+    animation: floatIcon1 8s ease-in-out infinite;
+}
+
+.floating-icon:nth-child(2) {
+    bottom: 30%;
+    left: -40px;
+    animation: floatIcon2 6s ease-in-out infinite;
+}
+
+.floating-icon:nth-child(3) {
+    top: 60%;
+    right: -20px;
+    animation: floatIcon3 7s ease-in-out infinite;
+}
+
+/* Floating Animations */
+@keyframes floatIcon1 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(-10px) translateX(-10px); }
+    75% { transform: translateY(-25px) translateX(5px); }
+}
+
+@keyframes floatIcon2 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    33% { transform: translateY(15px) translateX(-15px); }
+    66% { transform: translateY(-15px) translateX(10px); }
+}
+
+@keyframes floatIcon3 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    40% { transform: translateY(-18px) translateX(-8px); }
+    80% { transform: translateY(12px) translateX(15px); }
+}
+
+/* Sections */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 3rem 0 1rem 0;
+    color: var(--text-color);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Features Section */
+.features {
+    padding: 6rem 0;
+    background: var(--bg-color);
+    position: relative;
+    z-index: 2;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    padding: 2.5rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);
+}
+
+[data-theme="light"] .feature-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.15);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), #00aaff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+[data-theme="dark"] .feature-icon {
+    background: linear-gradient(135deg, var(--primary-color), #a855f7);
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.feature-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Products Section */
+.products {
+    padding: 6rem 0;
+    background: var(--bg-secondary);
+    position: relative;
+    z-index: 2;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);
+}
+
+[data-theme="light"] .product-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.15);
+}
+
+.product-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.product-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-color), #00aaff);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .product-badge {
+    background: linear-gradient(135deg, var(--primary-color), #a855f7);
+}
+
+.product-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), #00aaff);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="dark"] .product-icon {
+    background: linear-gradient(135deg, var(--primary-color), #a855f7);
+}
+
+.product-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.product-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.product-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.product-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.product-features i {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+/* About Section */
+.about {
+    padding: 6rem 0;
+    background: var(--bg-color);
+    position: relative;
+    z-index: 2;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.about-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-stat {
+    text-align: center;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.team-photo {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #f8fbff, #e8f4fd);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 2px solid rgba(0, 102, 204, 0.1);
+}
+
+.photo-placeholder i {
+    font-size: 4rem;
+    color: #0066cc;
+}
+
+.photo-placeholder span {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 0;
+    background: var(--bg-secondary);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), #00aaff);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .contact-icon {
+    background: linear-gradient(135deg, var(--primary-color), #a855f7);
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.contact-details h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.contact-details p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-input::placeholder {
+    color: var(--text-light);
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .footer {
+    background: #0a0a1a;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-description {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #0066cc;
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0066cc;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: #999;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 1rem;
+}
+
+.payment-methods i {
+    font-size: 2rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.payment-methods i:hover {
+    color: #0066cc;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-buttons {
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
+        justify-content: center;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    /* Ajustar espaciado del hero para tablet */
+    .hero {
+        padding-bottom: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    /* Hero Image Responsive */
+    .hero-image {
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+    
+    /* Logo flotante responsive */
+    .hero-floating-logo-svg {
+        width: 140px;
+        height: 42px;
+    }
+    
+    /* Payment Card Responsive */
+    .payment-card {
+        width: 300px;
+        height: 190px;
+        padding: 1.5rem;
+        margin: 0 auto;
+    }
+    
+    /* Logo dentro de tarjeta - posicionado en esquina inferior derecha */
+    .card-bottom-logo {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 20;
+    }
+    
+    .card-hero-logo-svg {
+        width: 70px;
+        height: 21px;
+        opacity: 0.8;
+    }
+    
+    /* Floating elements responsive */
+    .floating-elements {
+        gap: 1rem;
+    }
+    
+    .floating-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Ajustar padding de secciones para tablet */
+    .features,
+    .products,
+    .about,
+    .contact {
+        padding: 4rem 0;
+    }
+    
+    /* Margin-top específico para la sección solutions en móviles */
+    .features {
+        margin-top: 300px;
+    }
+    
+    .features-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .hero-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons {
+        gap: 0.8rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-large {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .stat {
+        text-align: center;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    /* Hero Image Mobile */
+    .hero-image {
+        gap: 1rem;
+        padding: 0.5rem 0;
+    }
+    
+    /* Logo flotante móvil pequeño */
+    .hero-floating-logo-svg {
+        width: 120px;
+        height: 36px;
+    }
+    
+    /* Payment Card Mobile */
+    .payment-card {
+        width: 280px;
+        height: 170px;
+        padding: 1.2rem;
+    }
+    
+    .card-number {
+        font-size: 1.2rem;
+        margin: 1rem 0 0.8rem 0;
+    }
+    
+    .card-info {
+        font-size: 0.8rem;
+    }
+    
+    /* Logo en esquina inferior derecha - móvil pequeño */
+    .card-bottom-logo {
+        bottom: 0.8rem;
+        right: 0.8rem;
+    }
+    
+    .card-hero-logo-svg {
+        width: 60px;
+        height: 18px;
+        opacity: 0.9;
+    }
+    
+    /* Floating elements mobile */
+    .floating-elements {
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    .floating-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    /* Ajustar padding de secciones para móviles pequeños */
+    .features,
+    .products,
+    .about,
+    .contact {
+        padding: 3rem 0;
+    }
+    
+    /* Margin-top específico para la sección solutions en móviles pequeños */
+    .features {
+        margin-top: 300px;
+    }
+    
+    /* Reducir espaciado de títulos de sección */
+    .section-title {
+        margin: 2rem 0 1rem 0;
+        font-size: 1.8rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Ajustes de opacidad para la tarjeta */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.payment-card:hover .card-header {
+    opacity: 0.9;
+}
+
+.card-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.payment-card:hover .card-logo {
+    opacity: 0.9;
+}
+
+/* Media query adicional para móviles muy pequeños */
+@media (max-width: 360px) {
+    /* Padding aún más compacto para pantallas muy pequeñas */
+    .features,
+    .products,
+    .about,
+    .contact {
+        padding: 2.5rem 0;
+    }
+    
+    /* Margin-top específico para la sección solutions en móviles muy pequeños */
+    .features {
+        margin-top: 300px;
+    }
+    
+    /* Hero con menos espaciado */
+    .hero {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Contenedor más compacto */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Espaciado reducido entre elementos del hero */
+    .hero-buttons {
+        margin: 1.5rem 0;
+    }
+    
+    .hero-stats {
+        margin-top: 1rem;
+    }
+    
+    /* Tarjeta de pago más pequeña */
+    .payment-card {
+        width: 260px;
+        height: 160px;
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .card-number {
+        font-size: 1rem;
+        margin: 0.8rem 0 0.6rem 0;
+    }
+    
+    .card-info {
+        font-size: 0.7rem;
+    }
+    
+    /* Logo flotante aún más pequeño */
+    .hero-floating-logo-svg {
+        width: 100px;
+        height: 30px;
+    }
+    
+    /* Logo en esquina de tarjeta más pequeño */
+    .card-hero-logo-svg {
+        width: 50px;
+        height: 15px;
+    }
+}

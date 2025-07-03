@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoriApp - Soluciones de Pago Globales</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" class="koriapp-logo">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="logoGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Icono -->
+                        <g class="logo-icon">
+                            <!-- Círculo exterior -->
+                            <circle cx="30" cy="30" r="25" fill="url(#logoGradient)" class="logo-circle"/>
+                            
+                            <!-- Formas internas que representan "K" estilizada -->
+                            <path d="M20 15 L20 45 M20 30 L35 15 M20 30 L35 45" 
+                                  stroke="white" 
+                                  stroke-width="3" 
+                                  stroke-linecap="round" 
+                                  stroke-linejoin="round" 
+                                  fill="none"/>
+                            
+                            <!-- Punto decorativo -->
+                            <circle cx="38" cy="22" r="2" fill="white"/>
+                        </g>
+                        
+                        <!-- Texto KORIAPP -->
+                        <g class="logo-text">
+                            <text x="65" y="25" 
+                                  font-family="Inter, Arial, sans-serif" 
+                                  font-size="18" 
+                                  font-weight="700" 
+                                  fill="url(#logoGradient)" 
+                                  class="logo-main-text">KORI</text>
+                            <text x="65" y="45" 
+                                  font-family="Inter, Arial, sans-serif" 
+                                  font-size="12" 
+                                  font-weight="500" 
+                                  fill="url(#logoGradient)" 
+                                  class="logo-sub-text">APP</text>
+                        </g>
+                        
+                        <!-- Elemento decorativo -->
+                        <g class="logo-decoration">
+                            <circle cx="150" cy="20" r="3" fill="url(#logoGradient)" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="160" cy="25" r="2" fill="url(#logoGradient)" opacity="0.4">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="155" cy="35" r="2.5" fill="url(#logoGradient)" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                    </svg>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#solutions" class="nav-link">Soluciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                <div class="nav-buttons">
+                    <button id="theme-toggle" class="btn btn-theme" title="Cambiar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#login" class="btn btn-outline">Ingresar</a>
+                    <a href="#signup" class="btn btn-primary">Comenzar</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Soluciones de Pago Seguras y Globales
+                    <span class="highlight">para Empresas Modernas</span>
+                </h1>
+                <p class="hero-description">
+                    Optimiza tus procesos de pago con nuestra tecnología de vanguardia. 
+                    Acepta pagos a nivel mundial, gestiona transacciones de forma segura y 
+                    haz crecer tu negocio con confianza.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#get-started" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Comenzar
+                    </a>
+                    <a href="#demo" class="btn btn-outline btn-large">
+                        <i class="fas fa-play"></i>
+                        Ver Demo
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Tiempo Activo</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Países</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Soporte</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Logo flotante arriba de la tarjeta -->
+                <div class="hero-floating-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" class="koriapp-logo hero-floating-logo-svg">
+                        <defs>
+                            <linearGradient id="floatingLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="floatingLogoGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Icono -->
+                        <g class="logo-icon">
+                            <!-- Círculo exterior -->
+                            <circle cx="30" cy="30" r="25" fill="url(#floatingLogoGradient)" class="logo-circle"/>
+                            
+                            <!-- Formas internas que representan "K" estilizada -->
+                            <path d="M20 15 L20 45 M20 30 L35 15 M20 30 L35 45" 
+                                  stroke="white" 
+                                  stroke-width="3" 
+                                  stroke-linecap="round" 
+                                  stroke-linejoin="round" 
+                                  fill="none"/>
+                            
+                            <!-- Punto decorativo -->
+                            <circle cx="38" cy="22" r="2" fill="white"/>
+                        </g>
+                        
+                        <!-- Texto KORIAPP -->
+                        <g class="logo-text">
+                            <text x="65" y="25" 
+                                  font-family="Inter, Arial, sans-serif" 
+                                  font-size="18" 
+                                  font-weight="700" 
+                                  fill="url(#floatingLogoGradient)" 
+                                  class="logo-main-text">KORI</text>
+                            <text x="65" y="45" 
+                                  font-family="Inter, Arial, sans-serif" 
+                                  font-size="12" 
+                                  font-weight="500" 
+                                  fill="url(#floatingLogoGradient)" 
+                                  class="logo-sub-text">APP</text>
+                        </g>
+                        
+                        <!-- Elemento decorativo -->
+                        <g class="logo-decoration">
+                            <circle cx="150" cy="20" r="3" fill="url(#floatingLogoGradient)" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="160" cy="25" r="2" fill="url(#floatingLogoGradient)" opacity="0.4">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="155" cy="35" r="2.5" fill="url(#floatingLogoGradient)" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="payment-card">
+                    <div class="card-header">
+                        <div class="card-logo">KORIAPP</div>
+                        <div class="card-chip"></div>
+                    </div>
+                    <div class="card-number">•••• •••• •••• 1234</div>
+                    <div class="card-info">
+                        <div class="card-holder">JUAN PÉREZ</div>
+                        <div class="card-expiry">12/25</div>
+                    </div>
+                    <!-- Logo en esquina inferior derecha -->
+                    <div class="card-bottom-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" class="koriapp-logo card-hero-logo-svg">
+                            <defs>
+                                <linearGradient id="cardBottomLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+                                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.7" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Icono -->
+                            <g class="logo-icon">
+                                <!-- Círculo exterior -->
+                                <circle cx="30" cy="30" r="25" fill="url(#cardBottomLogoGradient)" class="logo-circle"/>
+                                
+                                <!-- Formas internas que representan "K" estilizada -->
+                                <path d="M20 15 L20 45 M20 30 L35 15 M20 30 L35 45" 
+                                      stroke="rgba(0, 102, 204, 0.8)" 
+                                      stroke-width="3" 
+                                      stroke-linecap="round" 
+                                      stroke-linejoin="round" 
+                                      fill="none"/>
+                                
+                                <!-- Punto decorativo -->
+                                <circle cx="38" cy="22" r="2" fill="rgba(0, 102, 204, 0.8)"/>
+                            </g>
+                            
+                            <!-- Texto KORIAPP en blanco -->
+                            <g class="logo-text">
+                                <text x="65" y="25" 
+                                      font-family="Inter, Arial, sans-serif" 
+                                      font-size="18" 
+                                      font-weight="700" 
+                                      fill="white" 
+                                      class="logo-main-text">KORI</text>
+                                <text x="65" y="45" 
+                                      font-family="Inter, Arial, sans-serif" 
+                                      font-size="12" 
+                                      font-weight="500" 
+                                      fill="white" 
+                                      class="logo-sub-text">APP</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="floating-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="floating-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="floating-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="solutions" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">¿Por qué elegir KoriApp?</h2>
+                <p class="section-description">
+                    Nuestra plataforma integral de pagos ofrece todo lo que necesitas para tener éxito en la economía digital.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Seguridad Bancaria</h3>
+                    <p class="feature-description">
+                        Cifrado avanzado y protección contra fraudes para mantener tus transacciones seguras y los datos de tus clientes protegidos.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Súper Rápido</h3>
+                    <p class="feature-description">
+                        Procesa pagos en milisegundos con nuestra infraestructura optimizada y red global de servidores.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Analytics en Tiempo Real</h3>
+                    <p class="feature-description">
+                        Rastrea tus ingresos, monitorea transacciones y obtén insights con nuestro panel integral.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="feature-title">Integración Fácil</h3>
+                    <p class="feature-description">
+                        APIs simples y plugins para todas las plataformas principales. Ponte en marcha en minutos, no semanas.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Soporte 24/7</h3>
+                    <p class="feature-description">
+                        Nuestro equipo de soporte experto siempre está aquí para ayudarte a resolver problemas y optimizar tu configuración.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">Tarifas Competitivas</h3>
+                    <p class="feature-description">
+                        Precios líderes en la industria con tarifas transparentes y sin costos ocultos. Paga solo por lo que uses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <p class="section-description">
+                    Soluciones de pago completas diseñadas para empresas de todos los tamaños.
+                </p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="product-title">Pagos E-commerce</h3>
+                    </div>
+                    <p class="product-description">
+                        Acepta pagos en línea con facilidad. Soporte para todas las tarjetas de crédito principales, billeteras digitales y métodos de pago locales.
+                    </p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Checkout de un clic</li>
+                        <li><i class="fas fa-check"></i> Optimizado para móviles</li>
+                        <li><i class="fas fa-check"></i> Facturación recurrente</li>
+                        <li><i class="fas fa-check"></i> Soporte multi-moneda</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Saber Más</a>
+                </div>
+                <div class="product-card featured">
+                    <div class="product-badge">Más Popular</div>
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="product-title">Pagos Móviles</h3>
+                    </div>
+                    <p class="product-description">
+                        Habilita pagos móviles perfectos con nuestro SDK. Perfecto para apps, sitios web móviles y transacciones en tienda.
+                    </p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Pagos NFC</li>
+                        <li><i class="fas fa-check"></i> Escaneo código QR</li>
+                        <li><i class="fas fa-check"></i> Autenticación biométrica</li>
+                        <li><i class="fas fa-check"></i> Modo offline</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Comenzar</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="product-title">Soluciones Empresariales</h3>
+                    </div>
+                    <p class="product-description">
+                        Infraestructura de pagos escalable para grandes empresas con integraciones personalizadas y soporte dedicado.
+                    </p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> APIs personalizadas</li>
+                        <li><i class="fas fa-check"></i> Soluciones white-label</li>
+                        <li><i class="fas fa-check"></i> Reportes avanzados</li>
+                        <li><i class="fas fa-check"></i> Manager dedicado</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Contactar Ventas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Acerca de KoriApp</h2>
+                    <p class="about-description">
+                        Fundada en 2015, KoriApp ha estado a la vanguardia de la innovación en pagos, 
+                        ayudando a empresas de todos los tamaños a aceptar pagos de forma segura y eficiente. 
+                        Nuestra misión es hacer que el comercio global sea accesible para todos.
+                    </p>
+                    <p class="about-description">
+                        Con oficinas en los principales centros financieros del mundo, servimos a millones 
+                        de comerciantes y procesamos miles de millones en transacciones anualmente. Nuestro equipo de expertos 
+                        trabaja continuamente para mejorar nuestra plataforma y expandir nuestro alcance global.
+                    </p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="stat-number">5M+</span>
+                            <span class="stat-label">Comerciantes Activos</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">$50B+</span>
+                            <span class="stat-label">Procesado Anualmente</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Países Soportados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="team-photo">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-users"></i>
+                            <span>Nuestro Equipo Global</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ponte en Contacto</h2>
+                <p class="section-description">
+                    ¿Listo para transformar tu experiencia de pagos? Hablemos sobre cómo KoriApp puede ayudar a crecer tu negocio.
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Nuestras Oficinas</h3>
+                            <p>123 Distrito Financiero<br>Nueva York, NY 10004<br>Estados Unidos</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Teléfono</h3>
+                            <p>+1 (555) 123-4567<br>Disponible 24/7</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>ventas@koriapp.com<br>soporte@koriapp.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Tu Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Tu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Nombre de la Empresa">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" rows="5" placeholder="Tu Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" class="koriapp-logo">
+                            <defs>
+                                <linearGradient id="logoGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="logoGradientFooterDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Icono -->
+                            <g class="logo-icon">
+                                <!-- Círculo exterior -->
+                                <circle cx="30" cy="30" r="25" fill="url(#logoGradientFooter)" class="logo-circle"/>
+                                
+                                <!-- Formas internas que representan "K" estilizada -->
+                                <path d="M20 15 L20 45 M20 30 L35 15 M20 30 L35 45" 
+                                      stroke="white" 
+                                      stroke-width="3" 
+                                      stroke-linecap="round" 
+                                      stroke-linejoin="round" 
+                                      fill="none"/>
+                                
+                                <!-- Punto decorativo -->
+                                <circle cx="38" cy="22" r="2" fill="white"/>
+                            </g>
+                            
+                            <!-- Texto KORIAPP -->
+                            <g class="logo-text">
+                                <text x="65" y="25" 
+                                      font-family="Inter, Arial, sans-serif" 
+                                      font-size="18" 
+                                      font-weight="700" 
+                                      fill="url(#logoGradientFooter)" 
+                                      class="logo-main-text">KORI</text>
+                                <text x="65" y="45" 
+                                      font-family="Inter, Arial, sans-serif" 
+                                      font-size="12" 
+                                      font-weight="500" 
+                                      fill="url(#logoGradientFooter)" 
+                                      class="logo-sub-text">APP</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="footer-description">
+                        Soluciones de pago seguras, rápidas y confiables para empresas en todo el mundo.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Productos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pagos E-commerce</a></li>
+                        <li><a href="#">Pagos Móviles</a></li>
+                        <li><a href="#">Soluciones Empresariales</a></li>
+                        <li><a href="#">Documentación API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Empresa</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Acerca de Nosotros</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Prensa</a></li>
+                        <li><a href="#">Socios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Soporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                        <li><a href="#">Estado</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Cumplimiento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2024 KoriApp. Todos los derechos reservados.</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-apple-pay"></i>
+                        <i class="fab fa-google-pay"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
