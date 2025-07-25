@@ -10,6 +10,7 @@ html {
     width: 100%;
     overflow-x: hidden;
 }
+/* --- UNIFICADO: Media query para móviles pequeños --- */
 @media (max-width: 480px) {
     html {
         width: 100vw;
@@ -20,123 +21,42 @@ html {
         min-width: 100vw;
         overflow-x: hidden;
     }
-    .header {
-        min-height: 48px;
-    }
-    .navbar {
-        padding: 0.5rem 0 0.5rem 0;
-    }
+    .header { min-height: 48px; }
+    .navbar { padding: 0.5rem 0; }
     .nav-container {
         padding-left: max(env(safe-area-inset-left), 4px);
         padding-right: max(env(safe-area-inset-right), 4px);
         gap: 0.5rem;
     }
-    .logo {
-        font-size: 1rem;
+    .logo { font-size: 1rem; }
+    .logo-image { height: 28px; margin-right: 6px; }
+    .nav-menu { top: 48px; padding: 0.7rem 0; gap: 1rem; }
+    .nav-menu a { font-size: 0.95rem; padding: 0.6rem 0; }
+    .hero { padding: 56px 0 30px; min-height: 55vh; }
+    .hero-content { padding: 0 4px; gap: 1rem; }
+    .hero-content h1 { font-size: clamp(1.1rem, 6vw, 1.4rem); margin-bottom: 0.5rem; }
+    .hero-content h2 { font-size: clamp(0.95rem, 5vw, 1.1rem); margin-bottom: 0.5rem; }
+    .hero-content p { font-size: clamp(0.8rem, 3vw, 0.95rem); margin-bottom: 0.7rem; }
+    .hero-buttons { gap: 0.5rem; }
+    .btn { padding: 10px 10px; font-size: 0.85rem; max-width: 200px; }
+    .services h2, .about h2, .contact h2, .gallery h2 {
+        font-size: clamp(1.1rem, 5vw, 1.3rem); margin-bottom: 1rem;
     }
-    .logo-image {
-        height: 28px;
-        margin-right: 6px;
-    }
-    .nav-menu {
-        top: 48px;
-        padding: 0.7rem 0;
-        gap: 1rem;
-    }
-    .nav-menu a {
-        font-size: 0.95rem;
-        padding: 0.6rem 0;
-    }
-    .hero {
-        padding: 56px 0 30px;
-        min-height: 55vh;
-    }
-    .hero-content {
-        padding: 0 4px;
-        gap: 1rem;
-    }
-    .hero-content h1 {
-        font-size: clamp(1.1rem, 6vw, 1.4rem);
-        margin-bottom: 0.5rem;
-    }
-    .hero-content h2 {
-        font-size: clamp(0.95rem, 5vw, 1.1rem);
-        margin-bottom: 0.5rem;
-    }
-    .hero-content p {
-        font-size: clamp(0.8rem, 3vw, 0.95rem);
-        margin-bottom: 0.7rem;
-    }
-    .hero-buttons {
-        gap: 0.5rem;
-    }
-    .btn {
-        padding: 10px 10px;
-        font-size: 0.85rem;
-        max-width: 200px;
-    }
-    /* Títulos de sección */
-    .services h2,
-    .about h2,
-    .contact h2,
-    .gallery h2 {
-        font-size: clamp(1.1rem, 5vw, 1.3rem);
-        margin-bottom: 1rem;
-    }
-    /* Containers extra small */
-    .container {
-        padding: 0 4px;
-        width: 100%;
-        margin: 0;
-    }
-    /* Service cards extra small */
-    .service-card {
-        padding: 0.7rem;
-        margin: 0;
-        width: 100%;
-    }
-    .service-card h3 {
-        font-size: 0.95rem;
-    }
-    .service-card p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-    }
-    /* Gallery extra small */
-    .gallery-item {
-        height: 120px;
-        margin: 0;
-        width: 100%;
-    }
-    /* About section */
-    .about p {
-        font-size: 0.8rem;
-    }
-    .feature {
-        font-size: 0.8rem;
-    }
-    /* Contact */
-    .contact-item {
-        font-size: 0.8rem;
-    }
+    .container { padding: 0 4px; width: 100%; margin: 0; }
+    .service-card { padding: 0.7rem; margin: 0; width: 100%; }
+    .service-card h3 { font-size: 0.95rem; }
+    .service-card p { font-size: 0.8rem; line-height: 1.4; }
+    .gallery-item { height: 120px; margin: 0; width: 100%; }
+    .about p { font-size: 0.8rem; }
+    .feature { font-size: 0.8rem; }
+    .contact-item { font-size: 0.8rem; }
     .contact-form input,
     .contact-form select,
-    .contact-form textarea {
-        padding: 8px;
-        font-size: 0.8rem;
-    }
-    /* Footer */
-    .footer {
-        padding: 18px 0 10px;
-    }
-    .footer-section h3 {
-        font-size: 0.95rem;
-    }
-    .footer-section p,
-    .footer-section li {
-        font-size: 0.8rem;
-    }
-
+    .contact-form textarea { padding: 8px; font-size: 0.8rem; }
+    .footer { padding: 18px 0 10px; }
+    .footer-section h3 { font-size: 0.95rem; }
+    .footer-section p, .footer-section li { font-size: 0.8rem; }
+}
 
 .nav-menu a::before {
     content: '';
@@ -156,134 +76,6 @@ html {
 }
 
 .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-/* Hero Section */
-.hero {
-    background: var(--gradient-hero);
-    color: var(--text-white);
-    padding: 120px 0 80px;
-    display: flex;
-    align-items: center;
-    min-height: 80vh;
-    width: 100vw; /* Usar todo el ancho del viewport */
-    max-width: 100vw;
-    overflow-x: hidden; /* Cambiar overflow para permitir full width */
-    position: relative;
-    margin: 0; /* Eliminar cualquier margen */
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 70%, var(--shadow-neon) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-.hero-content {
-    width: 100vw; /* Usar todo el ancho del viewport */
-    max-width: 100vw;
-    margin: 0;
-    padding: 0 20px; /* Padding para el contenido */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem; /* Reducido para móviles */
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    box-sizing: border-box;
-}
-
-.hero-content h1 {
-    font-size: clamp(1.8rem, 5vw, 3rem); /* Responsive font size */
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    text-shadow: 0 0 20px var(--shadow-neon);
-    background: linear-gradient(45deg, var(--text-white), var(--accent-gold));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-content h2 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive font size */
-    color: var(--accent-gold);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 15px var(--accent-gold);
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 15px var(--accent-gold);
-    }
-    to {
-        text-shadow: 0 0 25px var(--accent-gold), 0 0 35px var(--accent-gold);
-    }
-}
-
-.hero-content p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.hero-image {
-    text-align: center;
-    color: var(--accent-gold);
-    opacity: 0.8;
-    width: 100%;
-}
-
-.hero-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 30px var(--shadow-neon);
-    object-fit: contain; /* Mejor ajuste para móviles */
-    border: 2px solid var(--neon-violet);
-}
-
-.hero-icon-fallback {
-    display: none;
-    filter: drop-shadow(0 0 15px var(--accent-gold));
-}
-
-/* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
     justify-content: center;
     min-height: 44px; /* Mejor para touch */
     font-size: 1rem;
