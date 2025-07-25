@@ -1,0 +1,28 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#f0f4f8"/>
+  
+  <!-- Lavabo -->
+  <ellipse cx="150" cy="100" rx="80" ry="40" fill="white" stroke="#333" stroke-width="3"/>
+  <ellipse cx="150" cy="95" rx="70" ry="35" fill="#e3f2fd"/>
+  
+  <!-- Grifo -->
+  <rect x="145" y="60" width="10" height="30" fill="#2a5298" rx="5"/>
+  <ellipse cx="150" cy="60" rx="15" ry="8" fill="#2a5298"/>
+  
+  <!-- Gotas de agua -->
+  <circle cx="145" cy="85" r="3" fill="#64b5f6"/>
+  <circle cx="155" cy="90" r="2" fill="#64b5f6"/>
+  <circle cx="150" cy="95" r="2" fill="#64b5f6"/>
+  
+  <!-- Tubería -->
+  <rect x="50" y="130" width="200" height="8" fill="#666" rx="4"/>
+  <rect x="100" y="125" width="8" height="20" fill="#666" rx="4"/>
+  <rect x="180" y="125" width="8" height="20" fill="#666" rx="4"/>
+  
+  <!-- Llave inglesa -->
+  <rect x="200" y="150" width="50" height="6" fill="#ffd700" rx="3"/>
+  <rect x="235" y="140" width="6" height="25" fill="#ffd700" rx="3"/>
+  
+  <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" 
+        text-anchor="middle" fill="#2a5298">Plomería</text>
+</svg>

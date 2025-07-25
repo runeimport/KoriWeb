@@ -1,0 +1,35 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#f0f4f8"/>
+  
+  <!-- Escudo de protección -->
+  <path d="M 150 40 L 120 60 L 120 120 L 150 140 L 180 120 L 180 60 Z" 
+        fill="#4caf50" stroke="#2e7d32" stroke-width="3"/>
+  
+  <!-- Check mark -->
+  <path d="M 135 90 L 145 100 L 165 80" 
+        fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Calendario de mantenimiento -->
+  <rect x="50" y="150" width="40" height="30" fill="white" stroke="#333" stroke-width="2"/>
+  <rect x="50" y="150" width="40" height="8" fill="#2a5298"/>
+  <text x="70" y="172" font-family="Arial, sans-serif" font-size="8" 
+        text-anchor="middle" fill="#333">MAR</text>
+  
+  <rect x="110" y="150" width="40" height="30" fill="white" stroke="#333" stroke-width="2"/>
+  <rect x="110" y="150" width="40" height="8" fill="#2a5298"/>
+  <text x="130" y="172" font-family="Arial, sans-serif" font-size="8" 
+        text-anchor="middle" fill="#333">JUN</text>
+  
+  <rect x="170" y="150" width="40" height="30" fill="white" stroke="#333" stroke-width="2"/>
+  <rect x="170" y="150" width="40" height="8" fill="#2a5298"/>
+  <text x="190" y="172" font-family="Arial, sans-serif" font-size="8" 
+        text-anchor="middle" fill="#333">SEP</text>
+  
+  <rect x="230" y="150" width="40" height="30" fill="white" stroke="#333" stroke-width="2"/>
+  <rect x="230" y="150" width="40" height="8" fill="#2a5298"/>
+  <text x="250" y="172" font-family="Arial, sans-serif" font-size="8" 
+        text-anchor="middle" fill="#333">DIC</text>
+  
+  <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" 
+        text-anchor="middle" fill="#2a5298">Mantenimiento</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#f0f4f8"/>
+  
+  <!-- Caja de herramientas -->
+  <rect x="80" y="70" width="120" height="60" fill="#333" rx="5"/>
+  <rect x="85" y="65" width="110" height="10" fill="#666" rx="5"/>
+  <rect x="140" y="60" width="20" height="15" fill="#666" rx="3"/>
+  
+  <!-- Herramientas sobresaliendo -->
+  <rect x="90" y="50" width="30" height="4" fill="#ffd700" rx="2"/>
+  <rect x="130" y="45" width="4" height="25" fill="#ffd700" rx="2"/>
+  <rect x="160" y="50" width="30" height="4" fill="#ffd700" rx="2"/>
+  
+  <!-- Llave inglesa -->
+  <rect x="50" y="140" width="50" height="6" fill="#2a5298" rx="3"/>
+  <rect x="85" y="130" width="6" height="25" fill="#2a5298" rx="3"/>
+  
+  <!-- Destornillador -->
+  <rect x="220" y="140" width="40" height="4" fill="#ff6b35" rx="2"/>
+  <rect x="210" y="135" width="15" height="15" fill="#333" rx="2"/>
+  
+  <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" 
+        text-anchor="middle" fill="#2a5298">Reparaciones</text>
+</svg>
