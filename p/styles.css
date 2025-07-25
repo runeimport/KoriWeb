@@ -62,15 +62,20 @@ body {
     background: var(--gradient-main);
     box-shadow: 0 2px 20px var(--shadow-neon);
     position: fixed;
-    width: 100%;
+    width: 100vw; /* Ancho completo para móviles */
+    max-width: 100vw;
     top: 0;
+    left: 0; /* Asegurar posicionamiento desde el borde */
     z-index: 1000;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--neon-violet);
+    overflow-x: hidden; /* Prevenir scroll horizontal */
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 0.8rem 0; /* Reducido ligeramente para móviles */
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .nav-container {
@@ -173,6 +178,7 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-top: 0; /* Asegurar que no haya margen superior adicional */
 }
 
 .hero::before {
@@ -889,17 +895,20 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 65px; /* Ajustado para coincidir con la altura real del header */
         flex-direction: column;
         background: var(--gradient-main);
         width: 100vw;
+        max-width: 100vw;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px var(--shadow-neon);
-        padding: 2rem 0;
+        padding: 1.5rem 0; /* Reducido para mejor proporción */
         z-index: 999;
         backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--neon-violet);
+        overflow-x: hidden; /* Prevenir scroll horizontal */
+        margin: 0;
     }
     
     .nav-menu.active {
@@ -912,9 +921,10 @@ body {
     
     /* Hero ajustes */
     .hero {
-        padding: 100px 0 60px;
+        padding: 80px 0 60px; /* Reducido para compensar el header más pequeño */
         min-height: 70vh;
         width: 100vw;
+        max-width: 100vw;
         overflow-x: hidden;
         margin: 0;
     }
@@ -1088,10 +1098,12 @@ body {
     }
     
     .hero {
-        padding: 90px 0 50px;
+        padding: 70px 0 50px; /* Reducido para pantallas extra pequeñas */
         min-height: 60vh;
         width: 100vw;
+        max-width: 100vw;
         margin: 0;
+        overflow-x: hidden;
     }
     
     .hero-content {
@@ -1207,8 +1219,10 @@ body {
     
     /* Navigation mobile */
     .nav-menu {
-        top: 60px;
-        padding: 1.5rem 0;
+        top: 58px; /* Ajustado para pantallas extra pequeñas */
+        padding: 1.2rem 0; /* Reducido para mejor proporción */
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     
     .nav-menu a {
