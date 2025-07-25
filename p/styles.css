@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Paleta de colores mejorada */
     --primary-black: #1a1a1a;
@@ -32,10 +38,12 @@ body {
     color: var(--text-white);
     background: var(--primary-black);
     overflow-x: hidden; /* Prevenir scroll horizontal */
-    width: 100%;
+    width: 100vw;
+    min-width: 100vw;
     max-width: 100vw; /* Limitar ancho máximo */
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .container {
@@ -51,7 +59,9 @@ body {
     background: var(--gradient-main);
     box-shadow: 0 2px 20px var(--shadow-neon);
     position: fixed;
-    width: 100%;
+    width: 100vw;
+    left: 0;
+    right: 0;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
@@ -159,9 +169,11 @@ body {
     display: flex;
     align-items: center;
     min-height: 80vh;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     position: relative;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .hero::before {
@@ -330,6 +342,9 @@ body {
     padding: 60px 0; /* Reducido para móviles */
     background: var(--secondary-black);
     position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .services::before {
@@ -451,6 +466,9 @@ body {
     padding: 60px 0; /* Reducido para móviles */
     background: var(--primary-black);
     position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .about::before {
@@ -541,6 +559,9 @@ body {
     padding: 80px 0;
     background: var(--secondary-black);
     position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .gallery::before {
@@ -641,6 +662,9 @@ body {
     padding: 60px 0; /* Reducido para móviles */
     background: var(--primary-black);
     position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .contact::before {
@@ -780,6 +804,9 @@ body {
     padding: 40px 0 20px;
     border-top: 2px solid var(--neon-violet);
     position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .footer::before {
@@ -843,7 +870,9 @@ body {
 @media (max-width: 768px) {
     body {
         width: 100vw;
+        min-width: 100vw;
         overflow-x: hidden;
+        position: relative;
     }
     
     .container {
@@ -855,6 +884,27 @@ body {
     .nav-container {
         padding: 0 10px;
         width: 100%;
+    }
+    
+    /* Asegurar que todas las secciones ocupen el ancho completo */
+    .hero,
+    .services,
+    .about,
+    .gallery,
+    .contact,
+    .footer {
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+        left: 0;
+        right: 0;
+        position: relative;
+    }
+    
+    .header {
+        width: 100vw;
+        left: 0;
+        right: 0;
     }
     
     .hamburger {
@@ -1196,9 +1246,4 @@ body {
 .service-card,
 .contact-item {
     animation: fadeInUp 0.6s ease-out;
-}
-
-/* Scroll smooth */
-html {
-    scroll-behavior: smooth;
 }
