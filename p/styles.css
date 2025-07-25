@@ -1,3 +1,22 @@
+/* Ajustes específicos para mobile: número de teléfono y ocultar secciones */
+@media (max-width: 480px) {
+  /* Ajustar tamaño del número de teléfono en la primera sección */
+  .hero-content .telefono, .hero-content .telefono a {
+    font-size: 1.2rem !important;
+    font-weight: bold;
+    color: var(--accent-gold);
+    word-break: break-all;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+  /* Ocultar secciones en mobile */
+  .services,
+  .about,
+  .gallery,
+  .contact {
+    display: none !important;
+  }
+}
 /* Reset y Base */
 * {
     margin: 0;
