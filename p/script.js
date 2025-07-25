@@ -33,11 +33,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(30, 60, 114, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
+        header.style.background = 'rgba(26, 26, 26, 0.95)';
+        header.style.backdropFilter = 'blur(15px)';
+        header.style.borderBottom = '1px solid rgba(139, 92, 246, 0.5)';
     } else {
-        header.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
-        header.style.backdropFilter = 'none';
+        header.style.background = 'var(--gradient-main)';
+        header.style.backdropFilter = 'blur(10px)';
+        header.style.borderBottom = '1px solid var(--neon-violet)';
     }
 });
 
@@ -106,14 +108,21 @@ function showNotification(message, type = 'info') {
         position: fixed;
         top: 100px;
         right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        background: ${type === 'success' ? 'linear-gradient(45deg, #4CAF50, #45a049)' : 
+                     type === 'error' ? 'linear-gradient(45deg, #f44336, #da190b)' : 
+                     'linear-gradient(45deg, #8b5cf6, #7c3aed)'};
         color: white;
         padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 20px ${type === 'success' ? 'rgba(76, 175, 80, 0.4)' : 
+                    type === 'error' ? 'rgba(244, 67, 54, 0.4)' : 
+                    'rgba(139, 92, 246, 0.4)'};
         z-index: 10000;
         max-width: 400px;
         animation: slideInRight 0.3s ease-out;
+        border: 1px solid ${type === 'success' ? '#4CAF50' : 
+                           type === 'error' ? '#f44336' : '#8b5cf6'};
+        backdrop-filter: blur(10px);
     `;
     
     // Add close functionality
