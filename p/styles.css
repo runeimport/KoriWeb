@@ -136,11 +136,7 @@ html {
     .footer-section li {
         font-size: 0.8rem;
     }
-}
-    background: rgba(139, 92, 246, 0.2);
-    box-shadow: 0 0 15px var(--shadow-neon);
-    text-shadow: 0 0 8px var(--accent-gold);
-}
+
 
 .nav-menu a::before {
     content: '';
