@@ -13,14 +13,16 @@
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
-                <div class="logo">
-                    <i class="fas fa-tools"></i>
-                    <span>Pablo Esmoris</span>
-                </div>
+                        <div class="logo">
+            <img src="images/logo.svg" alt="Pablo Esmoris Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <i class="fas fa-tools logo-fallback"></i>
+            <span>Pablo Esmoris</span>
+        </div>
                 <ul class="nav-menu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#galeria">Galería</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 <div class="hamburger">
@@ -46,7 +48,8 @@
             </div>
         </div>
         <div class="hero-image">
-            <i class="fas fa-fire fa-5x"></i>
+            <img src="images/hero-image.jpg" alt="Pablo Esmoris - Gasista Plomero" class="hero-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fas fa-fire fa-5x hero-icon-fallback"></i>
         </div>
     </section>
 
@@ -56,32 +59,50 @@
             <h2>Nuestros Servicios</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-fire"></i>
+                    <div class="service-image">
+                        <img src="images/servicios/instalacion-gas.jpg" alt="Instalaciones de Gas" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-fire service-icon-fallback"></i>
+                    </div>
                     <h3>Instalaciones de Gas</h3>
                     <p>Instalación de artefactos a gas, termotanques, estufas, calefones y cocinas con la máxima seguridad.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-wrench"></i>
+                    <div class="service-image">
+                        <img src="images/servicios/reparaciones.jpg" alt="Reparaciones" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-wrench service-icon-fallback"></i>
+                    </div>
                     <h3>Reparaciones</h3>
                     <p>Reparación de pérdidas de gas, artefactos defectuosos y sistemas de calefacción.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-clipboard-check"></i>
+                    <div class="service-image">
+                        <img src="images/servicios/certificaciones.jpg" alt="Certificaciones" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-clipboard-check service-icon-fallback"></i>
+                    </div>
                     <h3>Certificaciones</h3>
                     <p>Certificados de aptitud para instalaciones de gas natural y revisiones periódicas.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-tint"></i>
+                    <div class="service-image">
+                        <img src="images/servicios/plomeria.jpg" alt="Plomería" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-tint service-icon-fallback"></i>
+                    </div>
                     <h3>Plomería</h3>
                     <p>Instalación y reparación de sistemas de agua, desagües y sanitarios.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-shield-alt"></i>
+                    <div class="service-image">
+                        <img src="images/servicios/mantenimiento.jpg" alt="Mantenimiento" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-shield-alt service-icon-fallback"></i>
+                    </div>
                     <h3>Mantenimiento</h3>
                     <p>Revisiones preventivas y mantenimiento de instalaciones para garantizar su seguridad.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-clock"></i>
+                    <div class="service-image">
+                        <img src="images/servicios/emergencias.jpg" alt="Emergencias 24hs" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-clock service-icon-fallback"></i>
+                    </div>
                     <h3>Emergencias 24hs</h3>
                     <p>Servicio de emergencias las 24 horas para pérdidas de gas y problemas urgentes.</p>
                 </div>
@@ -117,7 +138,60 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <i class="fas fa-user-tie fa-8x"></i>
+                    <img src="images/about-pablo.jpg" alt="Pablo Esmoris - Gasista Plomero" class="about-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <i class="fas fa-user-tie fa-8x about-icon-fallback"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2>Trabajos Realizados</h2>
+            <p class="gallery-subtitle">Algunos de nuestros trabajos recientes</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/galeria/trabajo1.jpg" alt="Instalación de termotanque" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image"></i>
+                        <span>Instalación de termotanque</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/galeria/trabajo2.jpg" alt="Reparación de calefón" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image"></i>
+                        <span>Reparación de calefón</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/galeria/trabajo3.jpg" alt="Instalación de cocina" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image"></i>
+                        <span>Instalación de cocina</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/galeria/trabajo4.jpg" alt="Certificación de gas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image"></i>
+                        <span>Certificación de gas</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/galeria/trabajo5.jpg" alt="Reparación de plomería" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image"></i>
+                        <span>Reparación de plomería</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/galeria/trabajo6.jpg" alt="Mantenimiento preventivo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-image"></i>
+                        <span>Mantenimiento preventivo</span>
+                    </div>
                 </div>
             </div>
         </div>
