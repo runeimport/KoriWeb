@@ -1,0 +1,25 @@
+{
+  "name": "KoriRemover - AI Background Remover",
+  "description": "Professional AI-powered background removal tool",
+  "repository": "https://github.com/runeimport/KoriWeb",
+  "logo": "https://runeimport.github.io/KoriWeb/logo.svg",
+  "keywords": ["python", "flask", "ai", "image-processing", "background-removal"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": {
+      "description": "Python path for the application",
+      "value": "KoriRemoverApp"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "stack": "heroku-20"
+}
