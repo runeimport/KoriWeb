@@ -52,6 +52,20 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
+        .btn-group .btn {
+            margin: 0 5px;
+        }
+        
+        #processedPlaceholder {
+            padding: 60px 20px;
+            font-size: 1.1rem;
+        }
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+        
         .github-banner {
             background: #24292e;
             color: white;
@@ -159,21 +173,35 @@
                         </div>
                         <div class="card-body text-center">
                             <img id="originalImage" class="image-preview" src="" alt="Imagen original">
+                            <div class="mt-3">
+                                <button id="processBtn" class="btn btn-primary btn-lg" onclick="processImageDemo()" disabled>
+                                    <i class="fas fa-magic"></i> Procesar Imagen
+                                </button>
+                                <div id="processingSpinner" class="spinner-border text-primary mt-3" role="status" style="display: none;">
+                                    <span class="visually-hidden">Procesando...</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h5><i class="fas fa-cut"></i> Simulación - Sin Fondo</h5>
+                            <h5><i class="fas fa-cut"></i> Imagen Procesada</h5>
                         </div>
                         <div class="card-body text-center">
-                            <div class="alert alert-warning">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <strong>Demo Estático:</strong> Esta es solo una vista previa de la interfaz.
-                                Para procesamiento real, usa la aplicación completa.
+                            <div id="processedResult" style="display: none;">
+                                <img id="processedImage" class="image-preview" src="" alt="Imagen procesada">
+                                <div class="mt-3">
+                                    <div class="alert alert-success">
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Demo procesamiento completado!</strong> En la versión completa obtienes resultado real con IA.
+                                    </div>
+                                </div>
                             </div>
-                            <img id="processedImage" class="image-preview" src="" alt="Imagen procesada (simulación)">
+                            <div id="processedPlaceholder" class="text-muted">
+                                <i class="fas fa-arrow-left"></i> Sube una imagen y presiona "Procesar"
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,10 +209,13 @@
             <div class="row mt-3">
                 <div class="col-12 text-center">
                     <div class="btn-group">
-                        <button class="btn btn-success btn-lg" onclick="downloadDemo()">
+                        <button id="downloadOriginalBtn" class="btn btn-success btn-lg" onclick="downloadOriginal()" disabled>
                             <i class="fas fa-download"></i> Descargar Original
                         </button>
-                        <button class="btn btn-primary btn-lg" onclick="showInstallGuide()">
+                        <button id="downloadProcessedBtn" class="btn btn-primary btn-lg" onclick="downloadProcessed()" disabled>
+                            <i class="fas fa-download"></i> Descargar Procesada
+                        </button>
+                        <button class="btn btn-info btn-lg" onclick="showInstallGuide()">
                             <i class="fas fa-magic"></i> Obtener Versión Completa
                         </button>
                     </div>
@@ -307,15 +338,105 @@ run.bat</code></pre>
             reader.onload = (e) => {
                 // Mostrar imagen original
                 originalImage.src = e.target.result;
-                processedImage.src = e.target.result; // En demo, misma imagen
+                
+                // Habilitar botones
+                document.getElementById('processBtn').disabled = false;
+                document.getElementById('downloadOriginalBtn').disabled = false;
+                
+                // Deshabilitar botón de descarga procesada
+                document.getElementById('downloadProcessedBtn').disabled = true;
+                
+                // Ocultar resultado anterior
+                document.getElementById('processedResult').style.display = 'none';
+                document.getElementById('processedPlaceholder').style.display = 'block';
                 
                 // Mostrar resultado
                 resultContainer.style.display = 'block';
                 resultContainer.scrollIntoView({ behavior: 'smooth' });
                 
-                showToast('Imagen cargada - Esta es una demo estática', 'info');
+                showToast('Imagen cargada - Presiona "Procesar" para simular el procesamiento', 'success');
             };
             reader.readAsDataURL(file);
+        }
+
+        function processImageDemo() {
+            const processBtn = document.getElementById('processBtn');
+            const spinner = document.getElementById('processingSpinner');
+            const processedResult = document.getElementById('processedResult');
+            const processedPlaceholder = document.getElementById('processedPlaceholder');
+            const processedImage = document.getElementById('processedImage');
+            
+            // Mostrar animación de carga
+            processBtn.disabled = true;
+            spinner.style.display = 'inline-block';
+            
+            // Simular procesamiento (3 segundos)
+            setTimeout(() => {
+                // Crear canvas para simular remoción de fondo
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+                
+                img.onload = () => {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    // Dibujar imagen con efecto de transparencia simulado
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Aplicar un filtro básico para simular procesamiento
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imageData.data;
+                    
+                    // Hacer más transparentes los píxeles claros (simular remoción de fondo)
+                    for (let i = 0; i < data.length; i += 4) {
+                        const brightness = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                        if (brightness > 200) {
+                            data[i + 3] = 100; // Hacer semi-transparente
+                        }
+                    }
+                    
+                    ctx.putImageData(imageData, 0, 0);
+                    
+                    // Mostrar resultado
+                    processedImage.src = canvas.toDataURL();
+                    processedPlaceholder.style.display = 'none';
+                    processedResult.style.display = 'block';
+                    
+                    // Ocultar spinner y reactivar botón
+                    spinner.style.display = 'none';
+                    processBtn.disabled = false;
+                    
+                    // Habilitar descarga de imagen procesada
+                    document.getElementById('downloadProcessedBtn').disabled = false;
+                    
+                    showToast('Demo: Procesamiento simulado completado! Para resultados reales usa la app completa', 'success');
+                };
+                
+                img.src = originalImage.src;
+            }, 3000);
+        }
+
+        function downloadOriginal() {
+            const originalImage = document.getElementById('originalImage');
+            if (originalImage.src) {
+                const link = document.createElement('a');
+                link.download = 'imagen-original.png';
+                link.href = originalImage.src;
+                link.click();
+                showToast('Descargando imagen original', 'success');
+            }
+        }
+
+        function downloadProcessed() {
+            const processedImage = document.getElementById('processedImage');
+            if (processedImage.src) {
+                const link = document.createElement('a');
+                link.download = 'imagen-sin-fondo.png';
+                link.href = processedImage.src;
+                link.click();
+                showToast('Descargando imagen procesada (demo)', 'success');
+            }
         }
 
         function downloadDemo() {
